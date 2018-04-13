@@ -1,2 +1,1 @@
-# webpack-react
-类似vue-cli的webpack构建流程。
+#类似vue-cli的react webpack构建
