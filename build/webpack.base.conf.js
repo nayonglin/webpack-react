@@ -21,6 +21,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
+    modules: [
+      resolve('src'),
+      resolve('node_modules')
+    ],
     alias: {
       '@': resolve('src'),
       'src': resolve('src'),
@@ -32,7 +36,8 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        loader: 'babel-loader',
+        loader: 'babel-loader?cacheDirectory=true',
+        exclude: /node_modules/,
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
